@@ -1,0 +1,44 @@
+
+Generate Token
+1 - Using Admin Application
+2  - Using Django manage.py Command
+3 - Custom
+4 - Using Signal
+
+
+
+"""""
+
+
+--> command line for custom token create
+    http POST http://127.0.0.1:8000/gettoken/username="username" password='password'
+    token without custom token  create rules
+     1 - pip install httpie
+     2 - from rest_framework.authtoken.views import ObtainAuthToken
+     3 -  path('gettoken/', views.obtain_auth_token)
+     4 - http POST http://127.0.0.1:8000/gettoken/username="username" password='password'
+
+ * permission access command line  for data show post update
+   1 - http http://127.0.0.1:8000/urlpathname/ 'Authorization:Token tokennumber'
+   2 - http -f POST http://127.0.0.1:8000/urlpathname/fieldname'Authorization:Token tokennumber'
+   3 - http PUT http://127.0.0.1:8000/urlpathname/id/updatefields 'Authorization:Token tokennumber'
+   4 - http DELETE http://127.0.0.1:8000/urlpathname/4/ 'Authorization:Token tokennumber'
+"""
+
+"""""
+ Command line for custom token create
+ http POST http://127.0.0.1:8000/gettoken/username="username" password='password'
+
+
+ Token create  without custom token  rules are
+     0 - path('gettoken/', views.obtain_auth_token) # create token of user for terminal
+     1 - pip install httpie
+     2 - from rest_framework.authtoken.views import ObtainAuthToken
+     3 -  path('gettoken/', views.obtain_auth_token)
+     4 - http POST http://127.0.0.1:8000/gettoken/username="username" password='password'
+
+"""
+
+
+ path('gettoken/', CustomAuthToken.as_view()),  # for custom token
+
